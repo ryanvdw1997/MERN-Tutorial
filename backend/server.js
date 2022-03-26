@@ -2,7 +2,12 @@
 const express = require('express')
 // Allows to have environment variables -- dotenv
 const dotenv = require('dotenv').config()
+const colors = require('colors')
+const connectDB = require('./config/db')
 const port = process.env.port || 5000
+
+connectDB()
+
 const { errorHandler } = require('./middleware/errorMiddleware')
 
 const app = express()
